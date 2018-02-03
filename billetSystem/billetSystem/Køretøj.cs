@@ -18,6 +18,7 @@ namespace billetSystem
         public abstract int Pris();
         public abstract string KøretøjsBro();
         public abstract int KøretøjsPrisen();
+        public abstract DateTime TjekWeekendRabat();
        
 
 

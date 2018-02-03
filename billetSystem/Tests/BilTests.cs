@@ -17,6 +17,7 @@ namespace Tests
             //Arrange
             Bil bil1 = new Bil();
             //Act
+            bil1.KøretøjsPrisen();
             bil1.Brobizz = false;
             int pris = bil1.Pris();
 

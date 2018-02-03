@@ -8,9 +8,6 @@ namespace billetSystem
 {
     public class Bil : Køretøj
     {
-        public string Nummerplade { get; set; }
-        public DateTime Dato { get; set; }
-
         public override int KøretøjsPrisen()
         {
             return KøretøjsPris = 240;
@@ -34,6 +31,19 @@ namespace billetSystem
             return "Bil";
         }
 
-        
+        public DateTime TjekWeekendRabat()
+        {
+            if (Dato.DayOfWeek == DayOfWeek.Saturday || Dato.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return KøretøjsPris - (KøretøjsPris * 20 / 100);
+            }
+
+            else
+            {
+                return
+            }
+
+        }
+
     }
 }

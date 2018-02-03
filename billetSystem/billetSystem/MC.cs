@@ -8,9 +8,6 @@ namespace billetSystem
 {
     public class MC : Køretøj
     {
-            public string Nummerplade { get; set; }
-            public DateTime Dato { get; set; }
-
         public override int KøretøjsPrisen()
         {
             return KøretøjsPris = 125;
