@@ -12,14 +12,14 @@ namespace Tests
     public class MCTests
     {
         [TestMethod]
-        public void TestMCPris()
+        public void TestBilPris()
         {
             //Arrange
-            MC MC1 = new MC();
+            Bil bil1 = new Bil();
             //Act
-            int pris = MC1.Pris();
+            int pris = bil1.Pris();
             //Assert
-            Assert.AreEqual(125, pris);
+            Assert.AreEqual(240, pris);
 
 
         }
@@ -28,11 +28,23 @@ namespace Tests
         public void KøretøjsTest()
         {
             //Arrange
-            MC Harley = new MC();
+            Bil McLaren = new Bil();
             //Act
-            string køretøj = Harley.Køretøj();
+            string køretøj = McLaren.KøretøjsBro();
             //Assert
-            Assert.AreEqual("MC", køretøj);
+            Assert.AreEqual("Bil", køretøj);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void McNummerpladeLængdeTest()
+        {
+            // Arrange
+            MC mc3 = new MC();
+            // Act
+            mc3.Nummerplade = "12345678";
+            // Assert
+            Assert.AreEqual(8, mc3.NummerpladeBegrænser());
         }
     }
 }

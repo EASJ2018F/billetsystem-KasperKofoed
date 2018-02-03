@@ -4,3 +4,9 @@ C:\Users\Kasper Kofoed\Source\Repos\billetSystem\billetSystem\obj\Debug\billetSy
 C:\Users\Kasper Kofoed\Source\Repos\billetSystem\billetSystem\obj\Debug\billetSystem.csproj.CoreCompileInputs.cache
 C:\Users\Kasper Kofoed\Source\Repos\billetSystem\billetSystem\obj\Debug\billetSystem.dll
 C:\Users\Kasper Kofoed\Source\Repos\billetSystem\billetSystem\obj\Debug\billetSystem.pdb
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\bin\Debug\billetSystem.dll
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\bin\Debug\billetSystem.pdb
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\obj\Debug\billetSystem.csprojResolveAssemblyReference.cache
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\obj\Debug\billetSystem.csproj.CoreCompileInputs.cache
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\obj\Debug\billetSystem.dll
+C:\Users\Kasper Kofoed\Desktop\billetsystem-KasperKofoed\billetSystem\billetSystem\obj\Debug\billetSystem.pdb

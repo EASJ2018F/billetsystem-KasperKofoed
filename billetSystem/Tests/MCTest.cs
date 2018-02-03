@@ -27,11 +27,11 @@ namespace Tests
         public void KøretøjsTest()
         {
             //Arrange
-            Bil McLaren = new Bil();
+            MC Harley = new MC();
             //Act
-            string køretøj = McLaren.Køretøj();
+            string køretøj = Harley.KøretøjsBro();
             //Assert
-            Assert.AreEqual("Bil", køretøj);
+            Assert.AreEqual("MC", køretøj);
         }
     }
 }
