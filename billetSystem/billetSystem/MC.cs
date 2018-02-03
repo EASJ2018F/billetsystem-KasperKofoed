@@ -11,12 +11,25 @@ namespace billetSystem
             public string Nummerplade { get; set; }
             public DateTime Dato { get; set; }
 
-            public override int Pris()
+        public override int KøretøjsPrisen()
+        {
+            return KøretøjsPris = 125;
+        }
+
+        public override int Pris()
+        {
+            if (Brobizz == true)
             {
-                return 125;
+                return KøretøjsPris - (KøretøjsPris * 5 / 100);
             }
 
-            public override string KøretøjsBro()
+            else
+            {
+                return KøretøjsPris;
+            }
+        }
+
+        public override string KøretøjsBro()
             {
                 return "MC";
             }

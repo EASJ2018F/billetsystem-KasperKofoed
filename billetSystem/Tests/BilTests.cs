@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class MCTests
+    public class BilTests
     {
         [TestMethod]
         public void TestBilPris()
@@ -17,11 +17,11 @@ namespace Tests
             //Arrange
             Bil bil1 = new Bil();
             //Act
+            bil1.Brobizz = false;
             int pris = bil1.Pris();
+
             //Assert
             Assert.AreEqual(240, pris);
-
-
         }
 
         [TestMethod]
@@ -40,11 +40,11 @@ namespace Tests
         public void McNummerpladeLængdeTest()
         {
             // Arrange
-            MC mc3 = new MC();
+            Bil bil3 = new Bil();
             // Act
-            mc3.Nummerplade = "12345678";
+            bil3.Nummerplade = "1234567";
             // Assert
-            Assert.AreEqual(8, mc3.NummerpladeBegrænser());
+            Assert.AreEqual(8, bil3.NummerpladeBegrænser());
         }
     }
 }

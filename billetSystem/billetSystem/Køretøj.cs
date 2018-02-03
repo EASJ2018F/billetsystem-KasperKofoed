@@ -11,9 +11,14 @@ namespace billetSystem
 
         public string Nummerplade { get; set; }
         public DateTime Dato { get; set; }
+        public bool Brobizz { get; set; }
+        public int KøretøjsPris { get; set; }
+
 
         public abstract int Pris();
         public abstract string KøretøjsBro();
+        public abstract int KøretøjsPrisen();
+       
 
 
         public int NummerpladeBegrænser()
