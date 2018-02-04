@@ -6,43 +6,67 @@ using System.Threading.Tasks;
 
 namespace billetSystem
 {
-    public class Bil : Køretøj
+    public class Bil : Køretøjer
     {
-        public override int KøretøjsPrisen()
-        {
-            return KøretøjsPris = 240;
-        }
+        public override int KøretøjsPris { get; set; }
+        public override string Nummerplade { get; set; }
+        public override DayOfWeek Dato { get; set; }
+        public override bool BrobizzBrugt { get; set; }
 
-        public override int Pris()
+
+        public override string KøretøjsType()
         {
-            if (Brobizz == true)
+            if (Øresundsbroen)
             {
-                return KøretøjsPris - (KøretøjsPris * 5 / 100);
+                return "Øresund Bil";
             }
 
-            else
-            {
-                return KøretøjsPris;
-            }
-        }
-
-        public override string KøretøjsBro()
-        {
             return "Bil";
         }
 
-        public DateTime TjekWeekendRabat()
+        public override bool Øresundsbroen { get; set; }
+
+        public override int NummerPladeBegrænsing()
         {
-            if (Dato.DayOfWeek == DayOfWeek.Saturday || Dato.DayOfWeek == DayOfWeek.Sunday)
+            if (Nummerplade.Length > 8)
             {
-                return KøretøjsPris - (KøretøjsPris * 20 / 100);
+                throw new ArgumentException("Ops din nummerplade indeholder mere end 7 cifre");
             }
 
-            else
+            return Nummerplade.Length;
+        }
+
+        public int WeekendRabat()
+        {
+            int mellemRegning = 0;
+            if (!Øresundsbroen)
             {
-                return
+                KøretøjsPris = 240;
             }
 
+            if (Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday)
+            {
+
+                if (!BrobizzBrugt)
+                {
+                    return KøretøjsPris - (20 * KøretøjsPris / 100);
+                }
+
+                if (BrobizzBrugt && !Øresundsbroen)
+                {
+                    mellemRegning = KøretøjsPris - (20 * KøretøjsPris / 100);
+                    KøretøjsPris = mellemRegning - (5 * mellemRegning / 100);
+                    return KøretøjsPris;
+                }
+            }
+
+
+            return KøretøjsPris;
+        }
+
+        public Bil()
+        {
+            Dato = DateTime.Now.DayOfWeek;
         }
 
     }

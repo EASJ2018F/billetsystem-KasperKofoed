@@ -6,31 +6,39 @@ using System.Threading.Tasks;
 
 namespace billetSystem
 {
-    public class MC : Køretøj
+    public class MC : Køretøjer
     {
-        public override int KøretøjsPrisen()
+        public override int KøretøjsPris { get; set; }
+        public override string Nummerplade { get; set; }
+        public override DayOfWeek Dato { get; set; }
+        public override bool BrobizzBrugt { get; set; }
+
+        public override string KøretøjsType()
         {
-            return KøretøjsPris = 125;
+            if (Øresundsbroen)
+            {
+                return "Øresund MC";
+            }
+
+            return "MC";
         }
 
-        public override int Pris()
+        public override bool Øresundsbroen { get; set; }
+
+        /// <summary>
+        /// Sikrer sig at der kun kan oprettes en nummerplade med 7 cifre. Er den længere end 7 cifre smider den en exception
+        /// </summary>
+        public override int NummerPladeBegrænsing()
         {
-            if (Brobizz == true)
+
+            if (Nummerplade.Length > 7)
             {
-                return KøretøjsPris - (KøretøjsPris * 5 / 100);
+                throw new ArgumentException("Nummerplade er længere end 7 cifrer");
             }
 
-            else
-            {
-                return KøretøjsPris;
-            }
-        }
-
-        public override string KøretøjsBro()
-            {
-                return "MC";
-            }
+            return Nummerplade.Length;
         }
     }
+}
 
 
