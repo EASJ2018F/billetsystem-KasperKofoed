@@ -25,9 +25,6 @@ namespace billetSystem
 
         public override bool Øresundsbroen { get; set; }
 
-        /// <summary>
-        /// Sikrer sig at der kun kan oprettes en nummerplade med 7 cifre. Er den længere end 7 cifre smider den en exception
-        /// </summary>
         public override int NummerPladeBegrænsing()
         {
 
