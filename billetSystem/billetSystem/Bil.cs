@@ -8,10 +8,6 @@ namespace billetSystem
 {
     public class Bil : Køretøjer
     {
-        public override int KøretøjsPris { get; set; }
-        public override string Nummerplade { get; set; }
-        public override DayOfWeek Dato { get; set; }
-        public override bool BrobizzBrugt { get; set; }
 
 
         public override string KøretøjsType()
@@ -23,8 +19,6 @@ namespace billetSystem
 
             return "Bil";
         }
-
-        public override bool Øresundsbroen { get; set; }
 
         public override int NummerPladeBegrænsing()
         {
@@ -44,7 +38,7 @@ namespace billetSystem
                 KøretøjsPris = 240;
             }
 
-            if (Dato == DayOfWeek.Saturday || Dato == DayOfWeek.Sunday)
+            if (Dato.DayOfWeek == DayOfWeek.Saturday || Dato.DayOfWeek == DayOfWeek.Sunday)
             {
 
                 if (!BrobizzBrugt)
@@ -66,7 +60,7 @@ namespace billetSystem
 
         public Bil()
         {
-            Dato = DateTime.Now.DayOfWeek;
+            Dato = DateTime.Now;
         }
 
     }

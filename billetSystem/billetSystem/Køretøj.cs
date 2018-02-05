@@ -8,15 +8,15 @@ namespace billetSystem
 {
     public abstract class Køretøjer
     {
-        public abstract string KøretøjsType();
-        public abstract bool Øresundsbroen { get; set; }
+        public bool Øresundsbroen { get; set; }
+        public bool BrobizzBrugt { get; set; }
+        public int KøretøjsPris { get; set; }
+        public string Nummerplade { get; set; }
+        public DateTime Dato { get; set; }
+
+
         public abstract int NummerPladeBegrænsing();
-
-        public abstract bool BrobizzBrugt { get; set; }
-        public abstract int KøretøjsPris { get; set; }
-        public abstract string Nummerplade { get; set; }
-
-        public abstract DayOfWeek Dato { get; set; }
+        public abstract string KøretøjsType();
 
 
         public int Pris()
